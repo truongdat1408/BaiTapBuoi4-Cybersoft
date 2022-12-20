@@ -3,11 +3,11 @@ package model;
 import java.util.Scanner;
 
 public abstract class ConNguoi {
-    int maSo;
-    String hoTen;
-    String soDienThoai;
-    int soNgayLamViec;
-    double luong1Ngay;
+    private int maSo;
+    private String hoTen;
+    private String soDienThoai;
+    private int soNgayLamViec;
+    private double luong1Ngay;
 
     static final Scanner sc = new Scanner(System.in);
 
@@ -20,6 +20,7 @@ public abstract class ConNguoi {
         setSoDienThoai(sc.nextLine());
         System.out.print("So ngay lam viec: ");
         setSoNgayLamViec(sc.nextInt());
+        sc.nextLine();
     }
 
     public int getMaSo() {
@@ -52,5 +53,13 @@ public abstract class ConNguoi {
 
     public void setSoNgayLamViec(int soNgayLamViec) {
         this.soNgayLamViec = soNgayLamViec;
+    }
+
+    public double getLuong1Ngay() {
+        return luong1Ngay;
+    }
+
+    public void setLuong1Ngay(double luong1Ngay) {
+        this.luong1Ngay = luong1Ngay;
     }
 }

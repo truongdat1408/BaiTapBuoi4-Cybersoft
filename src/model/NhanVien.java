@@ -1,15 +1,22 @@
 package model;
 
+import java.util.Objects;
+
 public class NhanVien extends ConNguoi{
-    TruongPhong truongPhongQuanLy;
+    private TruongPhong truongPhongQuanLy;
 
     public NhanVien() {
-        luong1Ngay = 100;
+        setLuong1Ngay(100);
+    }
+
+    public NhanVien(int maSoNhanVien) {
+        setMaSo(maSoNhanVien);
+        setLuong1Ngay(100);
     }
 
     @Override
     public double tinhLuong() {
-        return luong1Ngay * soNgayLamViec;
+        return getLuong1Ngay() * getSoNgayLamViec();
     }
 
     public TruongPhong getTruongPhongQuanLy() {
@@ -28,12 +35,13 @@ public class NhanVien extends ConNguoi{
     @Override
     public String toString() {
         return "NhanVien{" +
-                "maSoTruongPhongQuanLy=" + truongPhongQuanLy.maSo +
-                ", maSo=" + maSo +
-                ", hoTen='" + hoTen + '\'' +
-                ", soDienThoai='" + soDienThoai + '\'' +
-                ", soNgayLamViec=" + soNgayLamViec +
-                ", luong1Ngay=" + luong1Ngay +
+                "maSoTruongPhongQuanLy=" + (Objects.nonNull(truongPhongQuanLy) ? truongPhongQuanLy.getMaSo() : "null") +
+                ", maSo=" + getMaSo() +
+                ", hoTen='" + getHoTen() + '\'' +
+                ", soDienThoai='" + getSoDienThoai() + '\'' +
+                ", soNgayLamViec=" + getSoNgayLamViec() +
+                ", luong1Ngay=" + getLuong1Ngay() +
+                ", luong=" + tinhLuong() +
                 '}';
     }
 }
